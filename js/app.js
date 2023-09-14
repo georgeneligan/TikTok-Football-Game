@@ -55,6 +55,20 @@ let ten = 10;
 let morePoint = 500;
 let leftPlayer = 0;
 let rightPlayer = 0;
+let playerOneSrc = "./assets/img/noimg.jpg";
+let playerTwoSrc = "./assets/img/noimg.jpg";
+let playerOneTitleInput = document.querySelector(".player1-title");
+let playerTwoTitleInput = document.querySelector(".player2-title");
+let playerOneAvatar = document.querySelector(".avatar-one");
+let playerTwoAvatar = document.querySelector(".avatar-two");
+let playerOneGameTitle = document.querySelector(".player-one-title");
+let playerTwoGameTitle = document.querySelector(".player-two-title");
+let setOptionPlayerOneBtn = document.querySelector(".setplayone");
+let setOptionPlayerTwoBtn = document.querySelector(".setplaytwo");
+let marqueLine = document.querySelectorAll(".marquee__line");
+let marqueInput = document.querySelector(".marque_input");
+let marqueBtn = document.querySelector(".marque_btn");
+let clearBtn = document.querySelector(".clear");
 
 var timeInSecs;
 var ticker;
@@ -106,6 +120,13 @@ function tick() {
   document.getElementById("countdown").innerHTML = pretty;
 }
 
+clearBtn.addEventListener("click", () => {
+  winnerCountOne.innerHTML = 0;
+  winnerCountTwo.innerHTML = 0;
+  playerLeftCount.innerHTML = 0;
+  playerRightCount.innerHTML = 0;
+});
+
 startBtn.addEventListener("click", () => {
   startButton();
 });
@@ -114,7 +135,7 @@ function startButton() {
   clearInterval(ticker);
 
   setTimeout(() => {
-    startTimer(5 * 60); // 4 minutes in seconds
+    startTimer(3 * 60); // 4 minutes in seconds
     function startTimer(secs) {
       timeInSecs = parseInt(secs);
       ticker = setInterval("tick()", 1000);
@@ -178,4 +199,44 @@ playerTwoBtn.addEventListener("click", () => {
   playerRightCount.innerHTML = rightCount;
   let secondPlayer = parseInt(playerRightCount.innerHTML);
   rightPlayer = secondPlayer;
+});
+
+var loadFilePrimary = function (event) {
+  var uploadImage = document.querySelector(".player1-avatar");
+  uploadImage.src = URL.createObjectURL(event.target.files[0]);
+  playerOneSrc = uploadImage.src;
+};
+
+var loadFileSecond = function (event) {
+  var uploadImage = document.querySelector(".player2-avatar");
+  uploadImage.src = URL.createObjectURL(event.target.files[0]);
+  playerTwoSrc = uploadImage.src;
+};
+
+setOptionPlayerOneBtn.addEventListener("click", () => {
+  if (playerOneTitleInput.value === "") {
+    playerOneGameTitle.innerHTML = playerOneGameTitle.innerHTML;
+  } else {
+    playerOneGameTitle.innerHTML = playerOneTitleInput.value;
+    playerOneTitleInput.value = "";
+    console.log(playerOneTitleInput.value);
+    playerOneAvatar.src = playerOneSrc;
+  }
+});
+
+setOptionPlayerTwoBtn.addEventListener("click", () => {
+  if (playerTwoTitleInput.value === "") {
+    playerTwoGameTitle.innerHTML = playerTwoGameTitle.innerHTML;
+  } else {
+    playerTwoGameTitle.innerHTML = playerTwoTitleInput.value;
+    playerTwoTitleInput.value = "";
+    console.log(playerTwoTitleInput.value);
+    playerTwoAvatar.src = playerTwoSrc;
+  }
+});
+
+marqueBtn.addEventListener("click", () => {
+  for (let i = 0; i < marqueLine.length; i++) {
+    marqueLine[i].innerHTML = marqueInput.value;
+  }
 });

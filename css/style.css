@@ -260,7 +260,7 @@ body {
   background-color: rgb(55, 219, 55);
   border: none;
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 350px;
   font-size: 18px;
   transition: 0.4s;
   box-shadow: 0px 0px 12px 2px white;
@@ -383,4 +383,119 @@ body {
   font-size: 14px;
   top: 75px;
   left: 560px;
+}
+
+.marquee {
+  overflow: hidden;
+  font-family: "Pridi", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  width: 400px;
+  margin-left: 170px;
+  margin-top: 50px !important;
+  border-radius: 10px;
+
+  background-color: #ffdc00;
+}
+
+.marquee__inner {
+  display: flex;
+}
+
+.marquee__line {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 10px 15px;
+  min-width: 100px;
+  white-space: nowrap;
+  animation-name: marqueeLine;
+  animation-duration: 10s;
+  animation-timing-function: 0s;
+  animation-iteration-count: infinite;
+  color: black;
+}
+
+@keyframes marqueeLine {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.player-settings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 20%;
+  position: absolute;
+  right: 60px;
+  top: 250px;
+  gap: 20px;
+}
+
+.player1-title,
+.player2-title {
+  color: black;
+  height: 30px;
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+.player1-avatar,
+.player2-avatar {
+  width: 100px;
+  height: 55px;
+}
+
+.setplayone,
+.setplaytwo {
+  color: white;
+  font-size: 18px;
+  width: 60px;
+  margin: 0 auto;
+  background-color: rgb(104, 104, 248);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.line_edit {
+  position: absolute;
+  right: 40px;
+  top: 500px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.marque_input {
+  height: 35px;
+  width: 200px;
+  padding-left: 10px;
+  font-size: 18px;
+  color: black;
+}
+
+.marque_btn {
+  color: white;
+  width: 60px;
+  margin: 0 auto;
+  background-color: rgb(104, 104, 248);
+  border: none;
+  border-radius: 10px;
+  height: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.clear {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-color: red;
+  font-size: 20px;
+  cursor: pointer;
 }

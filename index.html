@@ -8,7 +8,7 @@
   </head>
   <body>
     <section class="main-container">
-      <img class="bg" src="./assets/img/grasgras.jpg" alt="" />
+      <img class="bg" src="./assets/img/grass-bg.jpg" alt="" />
       <aside class="left">
         <div class="gift-img">
           <p class="onex">1+</p>
@@ -17,7 +17,7 @@
           <img class="finger" src="./assets/img/finger black.png" alt="" />
           <p class="xxx">500+</p>
           <img class="cowboy" src="./assets/img/cowboy black.png" alt="" />
-          <h1 id="countdown" class="timerr">05:00</h1>
+          <h1 id="countdown" class="timerr">03:00</h1>
           <p class="tikxone">1+</p>
           <img src="./assets/img/tiktok black.png" alt="" />
           <p class="pandaxten">10+</p>
@@ -39,13 +39,28 @@
           <div class="player-one">
             <h1 class="winn-anim left-win hidden">Win</h1>
             <h1 class="winn-anim draw hidden">Draw</h1>
-            <img class="avatar-one" src="./assets/img/s-l1200.webp" alt="" />
+            <img
+              class="avatar-one"
+              src="./assets/img/Cristiano_Ronaldo_2018.jpg"
+              alt="" />
           </div>
           <div class="vs">VS</div>
           <div class="player-two">
             <h1 class="winn-anim right-win hidden">Win</h1>
             <h1 class="winn-anim second-draw hidden">Draw</h1>
-            <img class="avatar-two" src="./assets/img/messimessi.jpg" alt="" />
+            <img class="avatar-two" src="./assets/img/5182903.jpg" alt="" />
+          </div>
+        </div>
+        <div class="marquee">
+          <div class="marquee__inner">
+            <p class="marquee__line">Tap coment Ronaldo +1 or Messi +1</p>
+            <p class="marquee__line">Tap coment Ronaldo +1 or Messi +1</p>
+            <p class="marquee__line">Tap coment Ronaldo +1 or Messi +1</p>
+            <p class="marquee__line">Tap coment Ronaldo +1 or Messi +1</p>
+            <p class="marquee__line">Tap coment Ronaldo +1 or Messi +1</p>
+            <p class="marquee__line">Tap coment Ronaldo +1 or Messi +1</p>
+            <p class="marquee__line">Tap coment Ronaldo +1 or Messi +1</p>
+            <p class="marquee__line">Tap coment Ronaldo +1 or Messi +1</p>
           </div>
         </div>
       </aside>
@@ -61,10 +76,43 @@
           <h1 class="key-four">Press "4"</h1>
           <h1 class="morexone">Prees "9" +500x Player 1</h1>
           <h1 class="morextwo">Prees "0" +500x Player 2</h1>
+          <div class="player-settings">
+            <input
+              type="file"
+              accept="image/*"
+              class="image1"
+              onchange="loadFilePrimary(event)" />
+
+            <input
+              type="file"
+              accept="image/*"
+              class="image2"
+              onchange="loadFileSecond(event)" />
+            <img class="player1-avatar" src="./assets/img/noimg.jpg" />
+            <img class="player2-avatar" src="./assets/img/noimg.jpg" />
+            <input
+              class="player1-title"
+              type="text"
+              placeholder="Type Player 1 Name" />
+
+            <input
+              class="player2-title"
+              type="text"
+              placeholder="Type Player 2 Name" />
+            <button class="setplayone">+</button>
+            <button class="setplaytwo">+</button>
+          </div>
+          <div class="line_edit">
+            <input class="marque_input" type="text" placeholder="marque line" />
+            <button class="marque_btn">+</button>
+          </div>
+          <br />
+          <button class="clear">Clear</button>
           <button class="start-btn">Start</button>
         </div>
       </aside>
     </section>
+
     <script src="./js/app.js"></script>
   </body>
 </html>
